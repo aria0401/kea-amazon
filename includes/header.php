@@ -11,7 +11,7 @@
     <title><?= $_title ?? 'Amazona' ?></title>
 </head>
 
-<body class="">
+<body class=<?= $_bodyClass ?? null ?>>
     <header>
         <?php if ($_nav) : ?>
             <nav class="navbar navbar-expand-sm navbar-dark">
@@ -20,7 +20,7 @@
                         <img class="logo-dark" src="/../media/logo-dark.png" alt="logo">
                     </a>
 
-                    <input type="text" class="form-control form-control-lg w-50">
+                    <input type="text" class="form-control w-50">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>

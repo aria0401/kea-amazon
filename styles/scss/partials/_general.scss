@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #111;
+  color: $body-color;
 }
 
 img {
@@ -63,4 +63,41 @@ input:focus {
 
 li.sidebar-li {
   cursor: pointer;
+}
+
+.a-sm-txt {
+  font-size: $form-font-size;
+  color: $a-color;
+  &:hover {
+    color: $a-hover;
+  }
+}
+
+body.index-page {
+  background-color: #e5f1f1;
+
+  div.page-hero {
+    position: absolute;
+    z-index: -1;
+  }
+
+  div.container {
+    margin-top: 250px;
+  }
+
+  div.categories-wrapper {
+    a {
+      text-decoration: none;
+      color: $body-color;
+    }
+  }
+
+  div.category-item {
+    background-color: white;
+    padding: 16px;
+
+    h4 {
+      min-height: 60px;
+    }
+  }
 }

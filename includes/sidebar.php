@@ -3,7 +3,7 @@
 
     <ul>
         <?php foreach ($categories as $category) : ?>
-            <li class="sidebar-li" data-action=<?= $_overview ? "filter-overview" : "filter-single-page"; ?> data-filter=<?= $_overview ? $category['id'] : $category['name']; ?>><?= $category['title']; ?>
+            <li class="sidebar-li" data-action=<?= $_overview ?? "filter-single-page"; ?> data-filter=<?= $_overview ? $category['id'] : $category['name']; ?>><?= $category['title']; ?>
             </li>
         <?php endforeach; ?>
     </ul>
@@ -19,8 +19,10 @@
 
 
         function getArticlesID() {
+
+            const categoryTitle = event.target.textContent;
             const id = event.target.dataset.filter;
-            getArticles(id);
+            getArticles(id, categoryTitle);
         }
 
         function getArticlesCategory() {
@@ -28,7 +30,7 @@
             location.href = "articles-overview.php?category=" + category;
         }
 
-        async function getArticles(id) {
+        async function getArticles(id, categoryTitle) {
 
             const formData = new FormData();
             formData.set('category_id', id);
@@ -39,22 +41,24 @@
             const result = await conn.text();
             const articles = JSON.parse(result);
 
-            displayArticles(articles);
+            displayArticles(articles, categoryTitle);
 
         }
 
 
-        function displayArticles(articles) {
+        function displayArticles(articles, categoryTitle) {
+
+            document.querySelector(".category-title").textContent = categoryTitle;
+
+            const contentWrapper = document.querySelector("#articlesList");
+            contentWrapper.innerHTML = '';
+            const template = document.querySelector("template");
 
             if (articles.length == 0) {
-
-                document.querySelector("#articlesList").textContent = "No articles found";
+                document.querySelector(".not-found").textContent = "No articles found";
             } else {
 
-                const contentWrapper = document.querySelector("#articlesList");
-                contentWrapper.innerHTML = '';
-                const template = document.querySelector("template");
-
+                document.querySelector(".not-found").textContent = "";
                 articles.forEach(elm => {
 
                     const clone = template.cloneNode(true).content;

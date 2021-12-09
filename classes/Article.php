@@ -46,7 +46,7 @@ class Article {
     public static function getByCategory($conn, $category) {
         // in article-overview
 
-        $sql = "SELECT a.*, ca.name AS category_name, ca.id
+        $sql = "SELECT a.*, ca.name AS category_name, ca.id as category_id, ca.title as category_title
         FROM article a
         JOIN article_category ac ON a.id = ac.article_id
         JOIN category ca ON ac.category_id = ca.id
@@ -67,7 +67,7 @@ class Article {
     public static function getByCategoryID($conn, $category_id) {
         // in sidebar
 
-        $sql = "SELECT a.*, ca.name AS category_name, ca.id as category_id
+        $sql = "SELECT a.*, ca.name AS category_name, ca.id as category_id, ca.title as category_title
             FROM article a
             JOIN article_category ac ON a.id = ac.article_id
             JOIN category ca ON ac.category_id = ca.id

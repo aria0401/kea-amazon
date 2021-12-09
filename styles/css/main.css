@@ -61,6 +61,36 @@ li.sidebar-li {
   cursor: pointer;
 }
 
+.a-sm-txt {
+  font-size: 0.8rem;
+  color: #0066c0;
+}
+.a-sm-txt:hover {
+  color: brown;
+}
+
+body.index-page {
+  background-color: #e5f1f1;
+}
+body.index-page div.page-hero {
+  position: absolute;
+  z-index: -1;
+}
+body.index-page div.container {
+  margin-top: 250px;
+}
+body.index-page div.categories-wrapper a {
+  text-decoration: none;
+  color: #111;
+}
+body.index-page div.category-item {
+  background-color: white;
+  padding: 16px;
+}
+body.index-page div.category-item h4 {
+  min-height: 60px;
+}
+
 .container-form-page {
   width: 350px;
   margin: auto;
