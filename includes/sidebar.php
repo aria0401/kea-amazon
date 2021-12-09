@@ -3,11 +3,31 @@
 
     <ul>
         <?php foreach ($categories as $category) : ?>
-            <li class="sidebar-li" onclick="getArticles(<?= $category['id']; ?>);"><?= $category['title']; ?></li>
+            <li class="sidebar-li" data-action=<?= $_overview ? "filter-overview" : "filter-single-page"; ?> data-filter=<?= $_overview ? $category['id'] : $category['name']; ?>><?= $category['title']; ?>
+            </li>
         <?php endforeach; ?>
     </ul>
 
     <script>
+        document.querySelectorAll('[data-action="filter-overview"]').forEach(elm => {
+            elm.addEventListener("click", getArticlesID);
+        })
+
+        document.querySelectorAll('[data-action="filter-single-page"]').forEach(elm => {
+            elm.addEventListener("click", getArticlesCategory);
+        })
+
+
+        function getArticlesID() {
+            const id = event.target.dataset.filter;
+            getArticles(id);
+        }
+
+        function getArticlesCategory() {
+            const category = event.target.dataset.filter;
+            location.href = "articles-overview.php?category=" + category;
+        }
+
         async function getArticles(id) {
 
             const formData = new FormData();
@@ -26,20 +46,26 @@
 
         function displayArticles(articles) {
 
-            const contentWrapper = document.querySelector("#articlesList");
-            contentWrapper.innerHTML = '';
-            const template = document.querySelector("template");
+            if (articles.length == 0) {
 
-            articles.forEach(elm => {
+                document.querySelector("#articlesList").textContent = "No articles found";
+            } else {
 
-                const clone = template.cloneNode(true).content;
-                clone.querySelector("p.article_name").textContent = elm.title;
-                clone.querySelector("img").src = "/uploads/" + elm.image_file;
-                clone.querySelector("a").setAttribute("href", `article.php?id=${elm.id}`);
+                const contentWrapper = document.querySelector("#articlesList");
+                contentWrapper.innerHTML = '';
+                const template = document.querySelector("template");
 
-                contentWrapper.appendChild(clone);
+                articles.forEach(elm => {
 
-            });
+                    const clone = template.cloneNode(true).content;
+                    clone.querySelector("p.article_name").textContent = elm.title;
+                    clone.querySelector("img").src = "/uploads/" + elm.image_file;
+                    clone.querySelector("a").setAttribute("href", `article.php?id=${elm.id}`);
+
+                    contentWrapper.appendChild(clone);
+
+                });
+            }
         }
     </script>
 
