@@ -22,6 +22,10 @@ img {
   color: $error-color;
 }
 
+.f-08r {
+  font-size: 0.8rem;
+}
+
 .primary_button {
   background: $btn-main-bg-color;
   background: -webkit-linear-gradient(top, #f7dfa5, #f0c14b);
@@ -73,31 +77,44 @@ li.sidebar-li {
   }
 }
 
-body.index-page {
-  background-color: #e5f1f1;
+.d-none-desktop {
+  display: none;
+}
 
-  div.page-hero {
-    position: absolute;
-    z-index: -1;
+.d-none-mobile {
+  display: block;
+}
+
+@media screen and (max-width: 450px) {
+  .d-none-desktop {
+    display: block;
   }
 
-  div.container {
-    margin-top: 250px;
+  .d-none-mobile {
+    display: none;
+  }
+}
+
+div.item {
+  a {
+    text-decoration: none;
+    color: $body-color;
+  }
+}
+
+div.slick-container {
+  background-color: white;
+  margin-bottom: 10rem;
+
+  .slick-slide img {
+    width: 45%;
   }
 
-  div.categories-wrapper {
-    a {
-      text-decoration: none;
-      color: $body-color;
-    }
+  p.details {
+    min-height: 40px;
   }
 
-  div.category-item {
-    background-color: white;
-    padding: 16px;
-
-    h4 {
-      min-height: 60px;
-    }
+  div.img {
+    min-height: 185px;
   }
 }

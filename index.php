@@ -4,7 +4,6 @@ require_once(__DIR__ . '/includes/init.php');
 
 $conn = require_once(__DIR__ . '/includes/db.php');
 
-// $articles = Article::getAll($conn);
 $categories = Category::getAll($conn);
 $publicShop = json_decode(file_get_contents('tsv-parser/shop.txt'));
 
@@ -39,15 +38,91 @@ $_bodyClass = 'index-page';
         </div>
     <?php endif; ?>
     <?php if ($publicShop) : ?>
-        <div class="items">
-            <?php foreach ($publicShop as $item) : ?>
-                <div class="item">
-                    <p><?= $item->title_en; ?></p>
-                    <img src='https://coderspage.com/2021-F-Web-Dev-Images/<?= $item->image ?>'>
-                </div>
-            <?php endforeach; ?>
+        <div class="slick-container">
+            <h2 class="p-5 pb-0">Best Sellers</h2>
+            <div class="carousel">
+                <?php foreach ($publicShop as $item) : ?>
+                    <div class="p-4">
+                        <div class="slick-item">
+                            <div class="mb-3">
+                                <p class="details mb-1"><?= $item->tittle_en; ?></p>
+                                <strong>&#36;<?= $item->price; ?>.00</strong>
+                            </div>
+                            <div class="img">
+                                <img src='https://coderspage.com/2021-F-Web-Dev-Images/<?= $item->image ?>'>
+                            </div>
+                            <p class="a-sm-txt">Shop now</p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
     <?php endif; ?>
+    <!-- <div class="slick-container">
+        <h2>Best Sellers</h2>
+        <div class="carousellll">
+            <div class="p-4">
+                <div class="p-4 slick-item">
+                    <img src="uploads/a-shop-2.jpg" alt="">
+                    <p>some text</p>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="p-4 slick-item">
+                    <img src="uploads/a-shop-3.jpg" alt="">
+                    <p>some text</p>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="p-4 slick-item">
+                    <img src="uploads/a-shop-4.jpg" alt="">
+                    <p>some text</p>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="p-4 slick-item">
+                    <img src="uploads/a-shop-5.jpg" alt="">
+                    <p>some text</p>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="p-4 slick-item">
+                    <img src="uploads/a-shop-2.jpg" alt="">
+                    <p>some text</p>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="p-4 slick-item">
+                    <img src="uploads/a-shop-6.jpg" alt="">
+                    <p>some text</p>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="p-4 slick-item">
+                    <img src="uploads/a-shop-2.jpg" alt="">
+                    <p>some text</p>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="p-4 slick-item">
+                    <img src="uploads/a-shop-8.jpg" alt="">
+                    <p>some text</p>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="p-4 slick-item">
+                    <img src="uploads/a-shop-2.jpg" alt="">
+                    <p>some text</p>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="p-4 slick-item">
+                    <img src="uploads/a-shop-9.jpg" alt="">
+                    <p>some text</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
 
 </div>
 

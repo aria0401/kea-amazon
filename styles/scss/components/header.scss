@@ -1,6 +1,7 @@
 header {
   display: flex;
   justify-content: center;
+  // height: $header-height;
 
   .navbar {
     width: 100%;
@@ -50,5 +51,9 @@ header {
     grid-template-columns: auto auto;
     justify-content: center;
     align-items: center;
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: white;
   }
 }

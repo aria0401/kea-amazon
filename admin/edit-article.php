@@ -14,15 +14,22 @@ if (isset($_GET['id'])) {
     die("id not supplied, article not found");
 }
 
+$category_ids = array_column($article->getCategories($conn), 'id');
+$categories = Category::getAll($conn);
+
 if (isMethod('post')) {
 
     $article->title = $_POST['title'];
     $article->description = $_POST['description'];
     $article->price = $_POST['price'];
 
+    $category_ids = $_POST['category'] ?? [];
+
     if ($article->validate()) {
 
         if ($article->update($conn)) {
+
+            $article->setCategories($conn, $category_ids);
 
             Url::redirect("/admin/article.php?id={$article->id}");
         }
@@ -36,9 +43,10 @@ if (isMethod('post')) {
 <?php require_once(__DIR__ . '/includes/header.php'); ?>
 
 
+<div class="container">
+    <h1>edit</h1>
+    <?php require_once(__DIR__ . '/includes/article-form.php'); ?>
+</div>
 
-<h1>edit</h1>
 
-
-<?php require_once(__DIR__ . '/includes/article-form.php'); ?>
 <?php require_once(__DIR__ . '/includes/footer.php'); ?>

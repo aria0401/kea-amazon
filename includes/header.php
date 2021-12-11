@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
     <link rel="stylesheet" href="/../styles/css/main.css">
     <title><?= $_title ?? 'Amazona' ?></title>
 </head>
@@ -16,8 +18,8 @@
         <?php if ($_nav) : ?>
             <nav class="navbar navbar-expand-sm navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/">
-                        <img class="logo-dark" src="/../media/logo-dark.png" alt="logo">
+                    <a class="navbar-brand text-center" href="/">
+                        <img class="logo-dark" src="/../media/logo-light.svg" alt="logo">
                     </a>
 
                     <input type="text" class="form-control w-50">
@@ -28,7 +30,7 @@
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <?php if (Auth::isLoggedIn()) : ?>
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Hello <?= $_SESSION['username']; ?></a>
+                                    <a class="nav-link dropdown-toggle f-08r" href="#" role="button" data-bs-toggle="dropdown">Hello <?= $_SESSION['username']; ?></a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="/user/edit-profile.php?id=<?= $_SESSION['id']; ?>">Edit Profile</a></li>
                                         <li><a class="dropdown-item" href="/user/logout.php">Log out</a></li>
@@ -49,7 +51,7 @@
             </nav>
         <?php else : ?>
             <a class="a-logo" href="/">
-                <img class="logo-light mt-3" src="/../media/logo-light.png" alt="logo">
+                <img class="logo-light mt-3" src="/../media/logo-dark.svg" alt="logo">
             </a>
         <?php endif; ?>
 

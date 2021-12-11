@@ -23,40 +23,53 @@ if (isMethod('get')) {
 $_title = 'Articles Overview';
 $_nav = true;
 $_overview = 'filter-overview';
+$_bodyClass = 'overview-page';
 ?>
 <?php require_once(__DIR__ . '/includes/header.php');  ?>
 
-<?php require_once(__DIR__ . '/includes/sidebar.php');  ?>
-
-<h1 class="category-title"> <?= $categoryTitle; ?> </h1>
-<p class="not-found"> <?= empty($articles) ? 'No articles found' : null; ?> </p>
-
-<div class="items row" id="articlesList">
-    <?php foreach ($articles as $article) : ?>
-        <div class="item">
-            <a href="article.php?id=<?= $article['id']; ?>">
-                <article>
-                    <p><?= $article['title']; ?></p>
-                    <p>Price: <?= $article['price']; ?></p>
-                    <p>ID: <?= $article['id']; ?></p>
-                    <?php if ($article['image_file']) : ?>
-                        <img src="/uploads/<?= $article['image_file']; ?>" alt="articles image">
-                    <?php endif; ?>
-                </article>
-            </a>
+<div class="container-fluid overview-container" id="main-sidebar">
+    <button class="openbtn d-none-desktop" onclick="openNav()">☰ See more categories</button>
+    <div id="mySidebar" class="sidebar d-none-desktop">
+        <?php require(__DIR__ . '/includes/sidebar.php');  ?>
+    </div>
+    <div class="row">
+        <div class="col-3 sidebar-desktop d-none-mobile">
+            <?php require(__DIR__ . '/includes/sidebar.php');  ?>
         </div>
-    <?php endforeach; ?>
+        <div class="col-12 col-sm-9 main-content">
+            <h2 class="category-title mt-5"> <?= $categoryTitle; ?> </h2>
+            <p class="not-found"> <?= empty($articles) ? 'No articles found' : null; ?> </p>
+
+            <div class="row" id="articlesList">
+                <?php foreach ($articles as $article) : ?>
+                    <div class="item col-10 col-md-5 col-lg-4 mx-auto p-lg-4">
+                        <a class="article_a" href="article.php?id=<?= $article['id']; ?>">
+                            <article>
+                                <?php if ($article['image_file']) : ?>
+                                    <img class="article_img" src="/uploads/<?= $article['image_file']; ?>" alt="articles image">
+                                <?php endif; ?>
+                                <p class="article_name f-08r"><?= $article['title']; ?></p>
+                                <strong class="article_price">&#36;<?= $article['price']; ?></strong>
+                            </article>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <template class="article-template">
+                <div class="item col-10 col-md-5 col-lg-4 mx-auto p-lg-4">
+                    <a class="article_a" href="">
+                        <article>
+                            <img class="article_img" src="" alt="">
+                            <p class="article_name f-08r"></p>
+                            <strong class="article_price"></strong>
+                        </article>
+                    </a>
+                </div>
+            </template>
+        </div>
+    </div>
+
 </div>
-
-<template>
-    <a class="a" href="">
-        <p class="article_name"></p>
-        <img src="" alt="">
-    </a>
-</template>
-
-
-
-
 
 <?php require_once(__DIR__ . '/includes/footer.php'); ?>

@@ -6,10 +6,7 @@
  */
 class Category {
 
-    /**
-     * Get all the categories
-     */
-
+    /*** Get all the categories */
     public static function getAll($conn) {
 
         $sql = "SELECT * 

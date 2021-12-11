@@ -52,37 +52,39 @@ if (isMethod('post')) {
 <?php $_title = 'Admin/edit image'; ?>
 <?php require_once(__DIR__ . '/includes/header.php'); ?>
 
-<?php if ($article) : ?>
+<div class="container">
+    <?php if ($article) : ?>
 
-    <article>
-        <h2><?= $article->title; ?></h2>
-        <p><?= $article->description; ?></p>
-        <?php if ($article->image_file) : ?>
-            <img src="../uploads/<?= $article->image_file; ?>" alt="articles image">
-            <a href="delete-article-image.php?id=<?= $article->id; ?>">Delete</a>
-        <?php endif; ?>
-    </article>
+        <article class="row">
+            <h2 class="col-12"><?= $article->title; ?></h2>
+            <p class="col-12"><?= $article->description; ?></p>
+            <?php if ($article->image_file) : ?>
+                <img class="col-3" src="../uploads/<?= $article->image_file; ?>" alt="articles image">
+                <a class="col-12" href="delete-article-image.php?id=<?= $article->id; ?>">Delete</a>
+            <?php endif; ?>
+        </article>
 
-<?php else : ?>
-    <p>We could not find this article.</p>
-<?php endif; ?>
+    <?php else : ?>
+        <p>We could not find this article.</p>
+    <?php endif; ?>
 
 
 
-<?php if (!empty($image->errors)) : ?>
-    <ul>
-        <?php foreach ($image->errors as $error) : ?>
-            <li><?= $error; ?></li>
-        <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
-<form method="post" enctype="multipart/form-data">
-    <div>
-        <label for="file">Image file</label>
-        <input type="file" name="file" id="file">
-    </div>
-    <button>Upload</button>
-</form>
+    <?php if (!empty($image->errors)) : ?>
+        <ul>
+            <?php foreach ($image->errors as $error) : ?>
+                <li><?= $error; ?></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <label for="file">Image file</label>
+            <input type="file" name="file" id="file">
+        </div>
+        <button>Upload</button>
+    </form>
+</div>
 
 
 <?php require_once(__DIR__ . '/includes/footer.php'); ?>

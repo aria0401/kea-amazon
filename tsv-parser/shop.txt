@@ -34,7 +34,7 @@
         "tittle_dk": "SSK aluminium M.2 NVME",
         "tittle_es": "SSK Aluminio M.2 NVME",
         "description_en": "USB 3.1\/3.2 Gen 2 (10 Gbps) to NVME PCI-E M-Key Solid State Drive External Enclosure Support UASP Trim (Fits only NVMe PCIe 2242\/2260\/2280)",
-        "description_da": "USB 3.1 \/ 3.2 Gen 2 (10 Gbps) til NVME PCI-E M-Key Solid State Drive Ekstern Kabinet Supp UASP Trim (Passer til kun NVME PCIe 2242\/2260\/2280)",
+        "description_da": "USB 3.1 \/ 3.2 Gen 2 (10 Gbps) til NVME PCI-E M-Key Solid State Drive Ekstern Kabinet Supp UASP Trim (Passer til kun NVME PCIE 2242\/2260\/2280)",
         "description_es": "USB 3.1 \/ 3.2 GEN 2 (10 Gbps) a NVME PCI-E M-KEY CLAVE DE ESTADO S\u00d3LIDO EXPLOSI\u00d3N EXPORTANTE SOPORTE DE APORTANTE UAP (SOLO NVME PCIE 2242\/2260\/2280)",
         "image": "dani981u-f28706ab-c101-4ef2-9af9-a8f9b92f6834.jpg"
     },
@@ -69,12 +69,12 @@
         "price": "200",
         "price_dk": "112",
         "price_es": "177",
-        "tittle_en": "SAMSUNG 23.5\u201d CF396 Curved Computer Monitor",
-        "tittle_dk": "Samsung 23,5 \"CF396 buet computersk\u00e6rm",
-        "tittle_es": "Samsung 23.5 \"CF396 Monitor de computadora curvado CF396",
-        "description_en": "AMD FreeSync for Advanced Gaming, 4ms Response Time, Wide Viewing Angle, Ultra Slim Design, LC24F396FHNXZA, Black",
-        "description_da": "AMD Freesync til avanceret spil, 4ms responstid, bred synsvinkel, ultra slank design, lc24f396fhnxza, sort",
-        "description_es": "AMD FREESYNC para juegos avanzados, tiempo de respuesta 4MS, \u00e1ngulo de visi\u00f3n amplia, dise\u00f1o ultra delgado, LC24F396FHNXZA, negro",
+        "tittle_en": "SAMSUNG 23.5\u201d CF396 Curved ",
+        "tittle_dk": "Samsung 23,5 \"CF396 buet",
+        "tittle_es": "Samsung 23.5 \"CF396 curvado",
+        "description_en": "Computer Monitor, AMD FreeSync for Advanced Gaming, 4ms Response Time, Wide Viewing Angle, Ultra Slim Design, LC24F396FHNXZA, Black",
+        "description_da": "Computer Monitor, AMD Freesync til avanceret spil, 4ms responstid, bred synsvinkel, ultra slank design, lc24f396fhnxza, sort",
+        "description_es": "Monitor de computadora, AMD FreeSync para juegos avanzados, tiempo de respuesta 4MS, \u00e1ngulo de visi\u00f3n amplia, dise\u00f1o ultra delgado, LC24F396FHNXZA, negro",
         "image": "dani981u-a7ee5bdc-0b2c-466a-9673-8deda9d1d486.jpg"
     },
     {

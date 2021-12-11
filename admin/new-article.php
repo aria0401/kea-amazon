@@ -5,6 +5,9 @@ require_once(__DIR__ . '/../includes/init.php');
 $article = new Article();
 $conn = require_once(__DIR__ . '/../includes/db.php');
 
+$category_ids = [];
+$categories = Category::getAll($conn);
+
 if (isMethod('post')) {
 
 
@@ -12,9 +15,13 @@ if (isMethod('post')) {
     $article->description = $_POST['description'];
     $article->price = $_POST['price'];
 
+    $category_ids = $_POST['category'] ?? [];
+
     if ($article->validate()) {
 
         if ($article->create($conn)) {
+
+            $article->setCategories($conn, $category_ids);
 
             Url::redirect("/admin/article.php?id={$article->id}");
         }
