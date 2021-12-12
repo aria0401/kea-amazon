@@ -123,7 +123,7 @@ class Article {
 
     /** Get the articles by category from the db */
     public static function getByCategory($conn, $category) {
-        //in article-overview
+        //in article-overview, sidebar
 
         $sql = "SELECT a.*, ca.name AS category_name, ca.id as category_id, ca.title as category_title
         FROM article a
@@ -133,7 +133,6 @@ class Article {
 
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':category', $category, PDO::PARAM_STR);
-        // $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
         if ($stmt->execute()) {
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -142,7 +141,7 @@ class Article {
 
     /** Get the articles by category id from the db */
     public static function getByCategoryID($conn, $category_id) {
-        //in sidebar
+        //not using it
 
         $sql = "SELECT a.*, ca.name AS category_name, ca.id as category_id, ca.title as category_title
             FROM article a

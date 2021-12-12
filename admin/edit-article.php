@@ -43,8 +43,8 @@ if (isMethod('post')) {
 <?php require_once(__DIR__ . '/includes/header.php'); ?>
 
 
-<div class="container">
-    <h1>edit</h1>
+<div class="container mb-5">
+    <h2 class="my-3">Edit Article</h2>
     <?php require_once(__DIR__ . '/includes/article-form.php'); ?>
 </div>
 

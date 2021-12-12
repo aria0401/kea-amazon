@@ -35,8 +35,11 @@ if (isMethod('post')) {
 <?php $_title = 'Admin/new article'; ?>
 <?php require_once(__DIR__ . '/includes/header.php'); ?>
 
-<h2>New Article</h2>
+<div class="container mb-5">
+    <h2 class="my-3">New Article</h2>
 
-<?php require_once(__DIR__ . '/includes/article-form.php'); ?>
+    <?php require_once(__DIR__ . '/includes/article-form.php'); ?>
+
+</div>
 
 <?php require_once(__DIR__ . '/includes/footer.php'); ?>

@@ -52,12 +52,18 @@
 //STATIC SIDEBAR
 
 .sidebar-desktop {
+  border-right: $sidebar-line-color;
+  // height: 100vh;
+
   ul {
     list-style: none;
+    padding-left: 1rem;
 
     li {
       color: $body-color;
       font-size: 0.9rem;
+      border-bottom: $sidebar-line-color;
+      width: 96%;
 
       &:hover {
         color: $a-hover;

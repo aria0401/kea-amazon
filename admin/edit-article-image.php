@@ -51,6 +51,7 @@ if (isMethod('post')) {
 
 <?php $_title = 'Admin/edit image'; ?>
 <?php require_once(__DIR__ . '/includes/header.php'); ?>
+<?php require_once(__DIR__ . '/includes/modal.php'); ?>
 
 <div class="container">
     <?php if ($article) : ?>
@@ -60,7 +61,8 @@ if (isMethod('post')) {
             <p class="col-12"><?= $article->description; ?></p>
             <?php if ($article->image_file) : ?>
                 <img class="col-3" src="../uploads/<?= $article->image_file; ?>" alt="articles image">
-                <a class="col-12" href="delete-article-image.php?id=<?= $article->id; ?>">Delete</a>
+                <a id="deleteBtn" class="col-12" href="delete-article-image.php?id=<?= $article->id; ?>">Delete Image</a>
+
             <?php endif; ?>
         </article>
 
@@ -73,16 +75,16 @@ if (isMethod('post')) {
     <?php if (!empty($image->errors)) : ?>
         <ul>
             <?php foreach ($image->errors as $error) : ?>
-                <li><?= $error; ?></li>
+                <li class="error"><?= $error; ?></li>
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
     <form method="post" enctype="multipart/form-data">
         <div>
             <label for="file">Image file</label>
-            <input type="file" name="file" id="file">
+            <input class="btn" type="file" name="file" id="file">
         </div>
-        <button>Upload</button>
+        <button class="btn">Upload</button>
     </form>
 </div>
 

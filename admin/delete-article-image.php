@@ -38,16 +38,19 @@ if (isMethod('post')) {
 <?php $_title = 'Admin/delete image'; ?>
 <?php require_once(__DIR__ . '/includes/header.php'); ?>
 
-
-<h2>Delete Article Image</h2>
-<?php if ($article->image_file) : ?>
-    <img src="../uploads/<?= $article->image_file; ?>" alt="articles image">
-<?php endif; ?>
-<form method="post">
-    <p>Are you sure?</p>
-    <button>Delete</button>
-    <a href="edit-article-image.php?id=<?= $article->id; ?>">Cancel</a>
-</form>
+<div class="container">
+    <h2 class="my-3">Delete Article Image</h2>
+    <div class="row">
+        <?php if ($article->image_file) : ?>
+            <img class="col-4" src="../uploads/<?= $article->image_file; ?>" alt="articles image">
+        <?php endif; ?>
+    </div>
+    <form method="post">
+        <p class="mt-3">Are you sure you want to delete this image?</p>
+        <button class="btn">Delete</button>
+        <a href="edit-article-image.php?id=<?= $article->id; ?>">Cancel</a>
+    </form>
+</div>
 
 
 <?php require_once(__DIR__ . '/includes/footer.php'); ?>

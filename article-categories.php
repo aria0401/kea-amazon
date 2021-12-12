@@ -7,7 +7,7 @@ $categories = Category::getAll($conn);
 
 if (isset($_GET['id'])) {
 
-    $article = Article::getById($conn, $_GET['id']);
+    $article = Article::getWithCategories($conn, $_GET['id']);
 } else {
     $article = null;
 }
@@ -36,15 +36,23 @@ $_nav = true;
                 <?php if ($article) : ?>
 
                     <article class="row">
-                        <?php if ($article->image_file) : ?>
-                            <div class="col-11 col-lg-4 mx-auto">
-                                <img class="mb-3" src="../uploads/<?= $article->image_file; ?>" alt="articles image">
+                        <?php if ($article[0]['image_file']) : ?>
+                            <div class="col-4">
+                                <img class="" src="../uploads/<?= $article[0]['image_file']; ?>" alt="articles image">
                             </div>
                         <?php endif; ?>
-                        <div class="col-11 col-lg-8 mx-auto row">
-                            <h2 class="w-lg-75 mb-4"><?= htmlspecialchars($article->title); ?></h2>
-                            <p class="w-lg-75"><?= htmlspecialchars($article->description); ?></p>
-                            <strong class="">&#36;<?= htmlspecialchars($article->price); ?></strong>
+                        <div class="col-8 row">
+                            <h2 class="w-75 mb-4"><?= htmlspecialchars($article[0]['title']); ?></h2>
+                            <p class="w-75"><?= htmlspecialchars($article[0]['description']); ?></p>
+                            <strong class="">&#36;<?= htmlspecialchars($article[0]['price']); ?></strong>
+                            <?php if ($article[0]['category_name']) : ?>
+                                <h5 class="">Categories:</h5>
+                                <ul>
+                                    <?php foreach ($article as $a) : ?>
+                                        <li><?= htmlspecialchars($a['category_title']); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
                         </div>
                     </article>
 

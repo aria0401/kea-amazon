@@ -77,12 +77,22 @@ li.sidebar-li {
   }
 }
 
+.hover-color {
+  &:hover {
+    color: $a-hover;
+  }
+}
+
 .d-none-desktop {
   display: none;
 }
 
 .d-none-mobile {
   display: block;
+}
+
+.min-h-100 {
+  min-height: 100px;
 }
 
 @media screen and (max-width: 450px) {
@@ -92,29 +102,5 @@ li.sidebar-li {
 
   .d-none-mobile {
     display: none;
-  }
-}
-
-div.item {
-  a {
-    text-decoration: none;
-    color: $body-color;
-  }
-}
-
-div.slick-container {
-  background-color: white;
-  margin-bottom: 10rem;
-
-  .slick-slide img {
-    width: 45%;
-  }
-
-  p.details {
-    min-height: 40px;
-  }
-
-  div.img {
-    min-height: 185px;
   }
 }

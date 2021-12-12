@@ -36,17 +36,17 @@ $_bodyClass = 'overview-page';
         <div class="col-3 sidebar-desktop d-none-mobile">
             <?php require(__DIR__ . '/includes/sidebar.php');  ?>
         </div>
-        <div class="col-12 col-sm-9 main-content">
+        <div class="col-11 col-sm-9 mx-auto main-content">
             <h2 class="category-title mt-5"> <?= $categoryTitle; ?> </h2>
             <p class="not-found"> <?= empty($articles) ? 'No articles found' : null; ?> </p>
 
-            <div class="row" id="articlesList">
+            <div class="d-flex-wrap" id="articlesList">
                 <?php foreach ($articles as $article) : ?>
-                    <div class="item col-10 col-md-5 col-lg-4 mx-auto p-lg-4">
+                    <div class="item  mx-auto p-lg-4">
                         <a class="article_a" href="article.php?id=<?= $article['id']; ?>">
                             <article>
                                 <?php if ($article['image_file']) : ?>
-                                    <img class="article_img" src="/uploads/<?= $article['image_file']; ?>" alt="articles image">
+                                    <img class="article_img mb-3" src="/uploads/<?= $article['image_file']; ?>" alt="articles image">
                                 <?php endif; ?>
                                 <p class="article_name f-08r"><?= $article['title']; ?></p>
                                 <strong class="article_price">&#36;<?= $article['price']; ?></strong>
@@ -57,10 +57,10 @@ $_bodyClass = 'overview-page';
             </div>
 
             <template class="article-template">
-                <div class="item col-10 col-md-5 col-lg-4 mx-auto p-lg-4">
+                <div class="item mx-auto p-lg-4">
                     <a class="article_a" href="">
                         <article>
-                            <img class="article_img" src="" alt="">
+                            <img class="article_img mb-3" src="" alt="">
                             <p class="article_name f-08r"></p>
                             <strong class="article_price"></strong>
                         </article>

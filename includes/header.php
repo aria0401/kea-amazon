@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css" />
     <link rel="stylesheet" href="/../styles/css/main.css">
-    <title><?= $_title ?? 'Amazona' ?></title>
+    <title><?= $_title ?? 'keazon' ?></title>
 </head>
 
 <body class=<?= $_bodyClass ?? null ?>>
@@ -19,7 +19,7 @@
             <nav class="navbar navbar-expand-sm navbar-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand text-center" href="/">
-                        <img class="logo-dark" src="/../media/logo-light.svg" alt="logo">
+                        <img class="logo-dark" src="/../media/keazon-white.svg" alt="logo">
                     </a>
 
                     <input type="text" class="form-control w-50">
@@ -36,7 +36,7 @@
                                         <li><a class="dropdown-item" href="/user/logout.php">Log out</a></li>
                                     </ul>
                                 <?php else : ?>
-                                    <a class="nav-link dropdown-toggle" href="/user/login.php" role="button" data-bs-toggle="dropdown">Hello, Log in</a>
+                                    <a class="nav-link dropdown-toggle f-08r" href="/user/login.php" role="button" data-bs-toggle="dropdown">Hello, Log in</a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item d-flex justify-content-center" href="/user/login.php">
                                                 <button class="btn primary_button w-75">Log in</button>
@@ -51,7 +51,7 @@
             </nav>
         <?php else : ?>
             <a class="a-logo" href="/">
-                <img class="logo-light mt-3" src="/../media/logo-dark.svg" alt="logo">
+                <img class="logo-light mt-3" src="/../media/keazon-black.svg" alt="logo">
             </a>
         <?php endif; ?>
 

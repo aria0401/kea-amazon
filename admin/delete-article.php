@@ -32,7 +32,7 @@ if (isMethod('post')) {
 <h2>Delete Article</h2>
 <form method="post">
     <p>Are you sure you want to delete this article: <?= $article->title; ?> ?</p>
-    <button>Delete</button>
+    <button class="btn">Delete</button>
     <a href="article.php?id=<?= $article->id; ?>">Cancel</a>
 </form>
 

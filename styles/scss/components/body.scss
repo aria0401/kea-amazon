@@ -4,10 +4,14 @@ body.index-page {
   div.page-hero {
     position: absolute;
     z-index: -1;
+
+    img {
+      width: 150%;
+    }
   }
 
   div.container {
-    margin-top: 250px;
+    margin-top: 125px;
   }
 
   div.categories-wrapper {
@@ -25,10 +29,89 @@ body.index-page {
       min-height: 60px;
     }
   }
+
+  div.slick-container {
+    background-color: white;
+    margin-bottom: 10rem;
+
+    .slick-slide img {
+      width: 45%;
+    }
+
+    p.details {
+      min-height: 40px;
+    }
+
+    div.img {
+      min-height: 185px;
+    }
+
+    .carousel {
+      display: flex;
+
+      button.slick_btn {
+        height: 60px;
+        align-self: center;
+      }
+
+      .fa-chevron-left,
+      .fa-chevron-right {
+        background-color: #fff;
+        box-shadow: var(--box-shadow);
+        padding: 0.8em;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        color: black;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    div.container {
+      margin-top: 130px;
+    }
+
+    div.page-hero img {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    div.container {
+      margin-top: 250px;
+    }
+  }
 }
 
 body.overview-page {
   .div.overview-container {
+    color: $body-color;
+  }
+
+  div.d-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  div.item {
+    width: 350px;
+    a {
+      text-decoration: none;
+      color: $body-color;
+    }
+
+    @media screen and (min-width: 500px) {
+      width: 200px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 330px;
+    }
+  }
+}
+
+body.admin-index {
+  a {
     color: $body-color;
   }
 }

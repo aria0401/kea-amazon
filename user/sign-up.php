@@ -60,7 +60,7 @@ if (isMethod('post')) {
     <div class="container-form-page mt-4">
         <div class=" form p-4">
             <h1 class="">Sign up</h1>
-            <form method="post">
+            <form method="post" id="formSignUp">
                 <?php if ($accountExists) : ?>
                     <p class="error">An account with this email address already exists.</p>
                 <?php endif; ?>

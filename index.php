@@ -25,7 +25,7 @@ $_bodyClass = 'index-page';
     <?php else : ?>
         <div class="categories-wrapper row">
             <?php foreach ($categories as $category) : ?>
-                <div class="category col-4 col-xl-3 mb-4">
+                <div class="category col-11 col-md-4 col-xl-3 m-auto mb-4">
                     <a href="articles-overview.php?category=<?= $category['name']; ?>">
                         <div class="category-item">
                             <h4><?= $category['title']; ?></h4>
@@ -58,72 +58,6 @@ $_bodyClass = 'index-page';
             </div>
         </div>
     <?php endif; ?>
-    <!-- <div class="slick-container">
-        <h2>Best Sellers</h2>
-        <div class="carousellll">
-            <div class="p-4">
-                <div class="p-4 slick-item">
-                    <img src="uploads/a-shop-2.jpg" alt="">
-                    <p>some text</p>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="p-4 slick-item">
-                    <img src="uploads/a-shop-3.jpg" alt="">
-                    <p>some text</p>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="p-4 slick-item">
-                    <img src="uploads/a-shop-4.jpg" alt="">
-                    <p>some text</p>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="p-4 slick-item">
-                    <img src="uploads/a-shop-5.jpg" alt="">
-                    <p>some text</p>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="p-4 slick-item">
-                    <img src="uploads/a-shop-2.jpg" alt="">
-                    <p>some text</p>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="p-4 slick-item">
-                    <img src="uploads/a-shop-6.jpg" alt="">
-                    <p>some text</p>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="p-4 slick-item">
-                    <img src="uploads/a-shop-2.jpg" alt="">
-                    <p>some text</p>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="p-4 slick-item">
-                    <img src="uploads/a-shop-8.jpg" alt="">
-                    <p>some text</p>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="p-4 slick-item">
-                    <img src="uploads/a-shop-2.jpg" alt="">
-                    <p>some text</p>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="p-4 slick-item">
-                    <img src="uploads/a-shop-9.jpg" alt="">
-                    <p>some text</p>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
 </div>
 
 <?php require_once(__DIR__ . '/includes/footer.php'); ?>
