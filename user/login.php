@@ -37,7 +37,7 @@ if (isMethod('post')) {
 <div class="container-form-page mt-4">
     <div class=" form p-4">
         <h1>Log in</h1>
-        <form method="post">
+        <form method="post" id="formSignUp">
             <?php if (!empty($error)) : ?>
                 <p class="error"><?= $error; ?></p>
             <?php endif; ?>
@@ -50,11 +50,11 @@ if (isMethod('post')) {
             <?php endif; ?>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input class="form-control" type="text" name="email" id="email" value="<?= htmlspecialchars($user->email); ?>">
+                <input class="form-control" type="email" name="email" id="email" value="<?= htmlspecialchars($user->email); ?>" required>
             </div>
             <div class="form-group mt-2">
                 <label for="password">password</label>
-                <input class="form-control" type="password" name="password" id="password" value="<?= htmlspecialchars($user->password); ?>">
+                <input class="form-control" type="password" name="password" id="password" value="<?= htmlspecialchars($user->password); ?>" minlength="2" maxlength="5" required>
             </div>
             <button class="btn primary_button w-100 mt-3">Log in</button>
         </form>

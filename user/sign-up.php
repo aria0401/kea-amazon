@@ -81,11 +81,11 @@ if (isMethod('post')) {
                 </div>
                 <div class="form-group mt-2">
                     <label for="email">Email</label>
-                    <input class="form-control" type="text" name="email" id="email" value="<?= htmlspecialchars($user->email); ?>">
+                    <input class="form-control" type="email" name="email" id="email" value="<?= htmlspecialchars($user->email); ?>" required>
                 </div>
                 <div class="form-group mt-2">
                     <label for="password">Password</label>
-                    <input class="form-control" type="password" name="password" id="password" value="<?= htmlspecialchars($user->password); ?>">
+                    <input class="form-control" type="password" name="password" id="password" value="<?= htmlspecialchars($user->password); ?>" minlength="2" maxlength="5" required>
                 </div>
                 <button class="btn primary_button w-100 mt-3">Sign up</button>
             </form>
@@ -97,5 +97,7 @@ if (isMethod('post')) {
     </div>
 
 <?php endif; ?>
-
+<script>
+    $("#formSignUp").validate();
+</script>
 <?php require_once(__DIR__ . '/../includes/footer.php'); ?>

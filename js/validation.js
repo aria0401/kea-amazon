@@ -15,13 +15,3 @@ $("#formArticle").validate({
 });
 
 
-$("#formSignUp").validate({
-    rules: {
-        first_name:{
-            required: true
-        },
-        last_name:{
-            required: true
-        }
-    }
-});

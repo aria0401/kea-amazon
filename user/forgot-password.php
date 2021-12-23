@@ -60,7 +60,7 @@ $_title = 'Forgot Password';
             <?php else : ?>
                 <p>You can reset your password here.</p>
             <?php endif; ?>
-            <form method="post">
+            <form method="post" id="formSignUp">
                 <?php if (!empty($user->errors)) : ?>
                     <ul>
                         <?php foreach ($user->errors as $error) : ?>
@@ -70,7 +70,7 @@ $_title = 'Forgot Password';
                 <?php endif; ?>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input class="form-control" type="text" name="email" id="email" value="<?= htmlspecialchars($user->email); ?>">
+                    <input class="form-control" type="email" name="email" id="email" value="<?= htmlspecialchars($user->email); ?>" required>
                 </div>
                 <button class="btn primary_button w-100 mt-3">Reset</button>
             </form>

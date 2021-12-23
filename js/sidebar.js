@@ -1,8 +1,15 @@
 
-//SIDEBAR NAVIGATION-BAR
+//SIDEBAR NAVIGATION
 
 document.querySelectorAll('[data-action="filter-overview"]').forEach(elm => {
+
     elm.addEventListener("click", () => {
+
+        document.querySelectorAll('.sidebar-li').forEach(li =>{
+            li.style.color = "#111";
+        })
+
+        elm.style.color = "brown";
         filterOverviewPage();
 
         if (window.innerWidth < 700) {
